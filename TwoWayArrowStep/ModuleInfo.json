@@ -1,0 +1,16 @@
+{
+    "Name": "Switchboard",
+    "Author": "Bavario",
+    "Description": "The 2-way Switchboard from 3D Land/3D World that moves on a rail.",
+    "ModuleData" : [
+      {
+        "NameObjFactory" : [
+          {
+            "Name" : "TwoWayArrowStep",
+            "Function" : "createExtActor<TwoWayArrowStep>",
+            "Include" : "TwoWayArrowStep.h"
+          }
+        ]
+      }
+    ]
+}
