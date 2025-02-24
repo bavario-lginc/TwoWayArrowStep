@@ -14,9 +14,6 @@ void TwoWayArrowStep::init (const JMapInfoIter &rIter) {
     MR::getJMapInfoArg1NoInit(rIter, &mAcceleration);
     MR::useStageSwitchReadA(this, rIter);
     MR::useStageSwitchWriteB(this, rIter);
-    
-    /*initHitSensor(1);
-    MR::addHitSensorMapObj(this, "Body", 8, 500.0f, TVec3f(0));*/
     makeActorAppeared();
     initNerve(&NrvTwoWayArrowStep::NrvWait::sInstance, 0);
     mOriginalRotation = TVec3f(mRotation);
@@ -40,15 +37,6 @@ void TwoWayArrowStep::control () {
 }
 
 void TwoWayArrowStep::attackSensor (HitSensor *pReceiever, HitSensor *pSender) {
-    /*if (!isNerve(&NrvTwoWayArrowStep::NrvDisabled::sInstance) && MR::isSensorPlayerOrYoshiOrRide(pSender) && MR::isOnGroundPlayer()) {
-        if (MR::isValidSwitchB(this)) 
-            MR::onSwitchB(this);
-
-        if (pReceiever == getSensor("Left")) 
-            setNerve(&NrvTwoWayArrowStep::NrvMoveLeft::sInstance);
-        else if (pReceiever == getSensor("Right")) 
-            setNerve(&NrvTwoWayArrowStep::NrvMoveRight::sInstance);
-    }*/
     if (!isNerve(&NrvTwoWayArrowStep::NrvDisabled::sInstance) && MR::isSensorPlayerOrYoshiOrRide(pSender) && MR::isOnGroundPlayer()) {
         if (MR::isValidSwitchB(this)) 
             MR::onSwitchB(this);
